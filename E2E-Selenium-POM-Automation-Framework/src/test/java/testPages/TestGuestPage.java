@@ -6,12 +6,11 @@ import pages.GuestPage;
 import pages.RegisterationPage;
 
 public class TestGuestPage extends BaseTest{
-    GuestPage geust;
 
 @Test
     public void  checkTitle(){
-     geust= new GuestPage(driver);
-    RegisterationPage reg=geust.clickRegister();
+    GuestPage geust= new GuestPage(driver);
+    geust.clickRegister();
    // Assert.assertEquals(geust.getTitle(),"nopCommerce demo store. Home page title");
 
 

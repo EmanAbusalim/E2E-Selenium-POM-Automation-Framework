@@ -24,12 +24,12 @@ public class GuestPage extends BasePage{
 
         return driver.getTitle();
     }
-    public RegisterationPage clickRegister(){
+    public void clickRegister(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(registerButton)).click();
 
         //registerButton.click();
-        return new RegisterationPage(driver);
+        //return new RegisterationPage(driver);
     }
 
 

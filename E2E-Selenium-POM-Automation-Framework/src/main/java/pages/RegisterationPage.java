@@ -13,7 +13,7 @@ public class RegisterationPage extends BasePage {
 
     @FindBy(xpath = "//strong[text()='Your Personal Details']")
     private WebElement registerMessage;
-    @FindBy(xpath = "//label[@for='gender-female']")
+    @FindBy(xpath = "//label[@for='gender-male']")
     private WebElement genderMale;
     @FindBy(xpath = "//label[@for='gender-female']")
     private WebElement genderFemale;
@@ -39,10 +39,7 @@ public class RegisterationPage extends BasePage {
             genderMale.click();
         } else if (gend == 'f' || gend == 'F') {
             genderFemale.click();
-
         }
-
-
     }
 
     public void setFirstName(String firstName) {
@@ -65,9 +62,9 @@ public class RegisterationPage extends BasePage {
         this.confirmPassword.sendKeys(confirmPassword);
     }
 
-    public RegisterationResult clickRegister() {
+    public void clickRegister() {
         registerButton.click();
-        return new RegisterationResult(driver);
+       // return new RegisterationResult(driver);
     }
 
 }

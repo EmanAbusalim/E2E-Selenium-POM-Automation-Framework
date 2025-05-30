@@ -2,13 +2,15 @@ package testPages;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.GuestPage;
 import pages.RegisterationPage;
 
 public class TestRegisterationPage extends BaseTest{
     @Test
     public void Register(){
         RegisterationPage register=new RegisterationPage(driver);
-
+        GuestPage g= new GuestPage(driver);
+        g.clickRegister();
         register.setGender('m');
         register.setFirstName("eman");
         register.setLastName("Abusalim");

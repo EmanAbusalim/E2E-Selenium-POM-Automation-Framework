@@ -3,6 +3,7 @@ package testPages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 import pages.GuestPage;
 
@@ -11,7 +12,7 @@ public class BaseTest {
    // @BeforeSuite
     @BeforeSuite
         public void setup() throws InterruptedException {
-         driver=new EdgeDriver();
+         driver=new FirefoxDriver();
        // BasePage e=new BasePage(driver);
         Thread.sleep(3000);
         driver.get("https://demo.nopcommerce.com/");
