@@ -4,24 +4,31 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class GuestPage extends BasePage{
-    WebDriver driver;
+
   public GuestPage(WebDriver driver){
        super(driver);
        // this.driver=driver;
     }
-@FindBy(tagName = "title")
-    private WebElement title;
-  @FindBy(xpath = "//a[text()='Register']")
+/*@FindBy(tagName = "title")
+    private WebElement title;*/
+  @FindBy(linkText = "Register")
   private WebElement registerButton;
 
     public String getTitle() {
 
-        return title.getText();
+        return driver.getTitle();
     }
     public RegisterationPage clickRegister(){
-       registerButton.click();
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(registerButton)).click();
+
+        //registerButton.click();
         return new RegisterationPage(driver);
     }
 

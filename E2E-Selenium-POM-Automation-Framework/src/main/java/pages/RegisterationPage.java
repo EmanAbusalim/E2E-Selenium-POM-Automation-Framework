@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class RegisterationPage extends BasePage {
-    WebDriver driver;
 
     public RegisterationPage(WebDriver driver) {
         super(driver);
