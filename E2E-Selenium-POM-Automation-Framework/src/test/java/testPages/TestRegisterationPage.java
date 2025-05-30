@@ -8,6 +8,7 @@ import pages.RegisterationPage;
 public class TestRegisterationPage extends BaseTest{
     @Test
     public void Register(){
+
         RegisterationPage register=new RegisterationPage(driver);
         GuestPage g= new GuestPage(driver);
         g.clickRegister();

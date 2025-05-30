@@ -5,11 +5,10 @@ import org.testng.annotations.Test;
 import pages.GuestPage;
 import pages.RegisterationPage;
 
-public class TestGuestPage extends BaseTest{
-
+public class TestGuestPage extends BaseTest{GuestPage geust;
 @Test
-    public void  checkTitle(){
-    GuestPage geust= new GuestPage(driver);
+    public void  clickregisterationform(){
+     geust= new GuestPage(BaseTest.driver);
     geust.clickRegister();
    // Assert.assertEquals(geust.getTitle(),"nopCommerce demo store. Home page title");
 
