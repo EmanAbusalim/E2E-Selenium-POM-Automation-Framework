@@ -1,12 +1,14 @@
 package pages;
 
-import net.bytebuddy.implementation.bind.annotation.Super;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends BasePage{
-    WebDriver driver;
-    HomePage(WebDriver driver){
+
+   public HomePage(WebDriver driver){
         super(driver);
-        this.driver=driver;
     }
+    @FindBy()
+    private WebElement message;
 }

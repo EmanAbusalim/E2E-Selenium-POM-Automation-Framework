@@ -2,25 +2,26 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.devtools.v135.page.Page;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class Registerresult extends BasePage{
+public class RegisterationResult extends BasePage{
     WebDriver driver;
-    Registerresult(WebDriver driver){
+    RegisterationResult(WebDriver driver){
         super(driver);
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+       // this.driver=driver;
+       // PageFactory.initElements(driver,this);
     }
     @FindBy(xpath = "//div[@class='result']")
     private WebElement registerationMessage;
     @FindBy(linkText="Continue")
         private WebElement continueButton;
+    public String getMessage(){
+        return registerationMessage.getText();
+    }
 
-    public HomePage clickContinue(){
+    public LoginPage clickContinue(){
         continueButton.click();
-        return new HomePage(driver);
+        return new LoginPage(driver);
     }
 
 

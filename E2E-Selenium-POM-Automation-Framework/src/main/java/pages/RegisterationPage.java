@@ -4,34 +4,42 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class RegisterationPage extends BasePage{
+public class RegisterationPage extends BasePage {
     WebDriver driver;
-    RegisterationPage(WebDriver driver){
+
+    public RegisterationPage(WebDriver driver) {
         super(driver);
-        this.driver=driver;
+        // this.driver=driver;
     }
-    @FindBy(id = "gender-male")
+
+    @FindBy(xpath = "//strong[text()='Your Personal Details']")
+    private WebElement registerMessage;
+    @FindBy(xpath = "//label[@for='gender-female']")
     private WebElement genderMale;
-    @FindBy(id = "gender-female")
+    @FindBy(xpath = "//label[@for='gender-female']")
     private WebElement genderFemale;
     @FindBy(id = "FirstName")
-    private WebElement firstName ;
+    private WebElement firstName;
     @FindBy(id = "LastName")
-    private WebElement lastName ;
+    private WebElement lastName;
     @FindBy(id = "Password")
-    private WebElement password ;
+    private WebElement password;
     @FindBy(id = "ConfirmPassword")
-    private WebElement confirmPassword ;
+    private WebElement confirmPassword;
     @FindBy(id = "Email")
-    private WebElement email ;
+    private WebElement email;
     @FindBy(id = "register-button")
-    private WebElement registerButton ;
+    private WebElement registerButton;
 
-    public void setGender (char gend ) {
-        if(gend=='f'|gend=='F'){
-            this.genderMale.click();
-        }else if(gend=='m'|gend=='M'){
-            this.genderFemale.click();
+    public String getRegisterMessage() {
+        return registerMessage.getText();
+    }
+
+    public void setGender(char gend) {
+        if (gend == 'm' || gend == 'M') {
+            genderMale.click();
+        } else if (gend == 'f' || gend == 'F') {
+            genderFemale.click();
 
         }
 
@@ -43,7 +51,11 @@ public class RegisterationPage extends BasePage{
     }
 
     public void setLastName(String lastName) {
-       this.lastName.sendKeys(lastName);
+        this.lastName.sendKeys(lastName);
+    }
+
+    public void setEmail(String email) {
+        this.email.sendKeys(email);
     }
 
     public void setPassword(String password) {
@@ -53,8 +65,10 @@ public class RegisterationPage extends BasePage{
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword.sendKeys(confirmPassword);
     }
-public Registerresult clickRegister(){
+
+    public RegisterationResult clickRegister() {
         registerButton.click();
-        return new Registerresult(driver);
+        return new RegisterationResult(driver);
+    }
+
 }
-   }
