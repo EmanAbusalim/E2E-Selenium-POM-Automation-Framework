@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class RegisterationResult extends BasePage{
-    RegisterationResult(WebDriver driver){
+   public  RegisterationResult(WebDriver driver){
         super(driver);
        // this.driver=driver;
        // PageFactory.initElements(driver,this);
@@ -14,13 +14,15 @@ public class RegisterationResult extends BasePage{
     private WebElement registerationMessage;
     @FindBy(linkText="Continue")
         private WebElement continueButton;
+
+    //actions
     public String getMessage(){
         return registerationMessage.getText();
     }
 
-    public LoginPage clickContinue(){
+    public void clickContinue(){
         continueButton.click();
-        return new LoginPage(driver);
+       // return new HomePage(driver);this line canceled according to the structure of pom i use
     }
 
 

@@ -23,7 +23,7 @@ driver=new ChromeDriver(options);
         Thread.sleep(3000);
         driver.get("https://demo.nopcommerce.com/");
         driver.manage().window().maximize();
-        //return new GuestPage(driver);
+        //retu+8rn new GuestPage(driver);
     }
     @AfterSuite
     public void closure(){
