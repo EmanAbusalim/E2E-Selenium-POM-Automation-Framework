@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 import pages.GuestPage;
@@ -16,9 +17,9 @@ public class BaseTest {
     @BeforeSuite
         public void setup() throws InterruptedException {
 
-ChromeOptions options=new ChromeOptions();
+EdgeOptions options=new EdgeOptions();
 options.addArguments("--incognito");
-driver=new ChromeDriver(options);
+driver=new EdgeDriver(options);
        // BasePage e=new BasePage(driver);
         Thread.sleep(3000);
         driver.get("https://demo.nopcommerce.com/");
