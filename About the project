@@ -1,0 +1,46 @@
+# Selenium POM Automation Framework
+
+This is a test automation framework built using **Selenium WebDriver** and **Java**, following the **Page Object Model (POM)** design pattern to create clean, maintainable, and reusable test scripts.
+
+---
+## Features
+
+* Modular Page Object Model architecture for easy maintenance
+* TestNG integration for test management and reporting
+* Maven for dependency and build management
+* Parallel test execution for faster test runs
+* Reusable methods and utilities for common actions
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+* Java JDK 8 or higher
+* Maven
+* IDE like IntelliJ IDEA or Eclipse
+* WebDriver binaries for the browsers you want to test (e.g., ChromeDriver, GeckoDriver)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/selenium-pom-framework.git
+   ```
+2. Open the project in your IDE
+3. Run `mvn clean install` to download dependencies and build the project
+4. Configure your test settings in the `config.properties` file
+
+---
+
+## Running Tests
+
+You can run tests using TestNG either through your IDE or command line:
+
+To run tests in parallel, make sure your TestNG XML configuration is set accordingly.
+
+---
+
+
